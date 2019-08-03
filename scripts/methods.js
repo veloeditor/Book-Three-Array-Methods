@@ -187,14 +187,92 @@ outEl.innerHTML += "<h1>Purchasing Agents</h1>";
 //   outEl.innerHTML += "<hr/>";
 // });
 
-const purchasingAgents = businesses.map(business => {
-    return business.purchasingAgent
-})
-console.table(purchasingAgents)
+// const purchasingAgents = businesses.map(business => {
+//     return {
+//       purchasingAgent: `${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}`,
+//       companyName: `${business.companyName}`,
+//       phoneWork: `${business.phoneWork}`
+//     }
+// })
+// console.log(purchasingAgents)
 
 // purchasingAgents.forEach(agent => {
-//   outEl.innerHTML += `<h2>${agent.nameFirst} ${agent.nameLast}</h2>;
-//                     <h3>${agent.companyName}</h3>`
+//   outEl.innerHTML += `<h2>${agent.purchasingAgent}</h2>
+//                       <section>${agent.companyName}</section>
+//                       <section>${agent.phoneWork}</section>`
+//   outEl.innerHTML += "<hr/>"
+// })
+
+// document
+//     .querySelector("#companySearch")
+//     .addEventListener("keypress", keyPressEvent => {
+//         if (keyPressEvent.charCode === 13) {
+//             /* WHEN  USER PRESSES ENTER, FIND MATCHING BUSINESS */
+//             const foundBusiness = businesses.find(
+//                 business =>
+//                     business.purchasingAgent.nameFirst.includes(keyPressEvent.target.value) || business.purchasingAgent.nameLast.includes(keyPressEvent.target.value)
+//             );
+
+//             outEl.innerHTML = `
+//                 <h2>
+//                 ${foundBusiness.purchasingAgent.nameFirst} ${foundBusiness.purchasingAgent.nameLast}
+//                 </h2>
+//                 <h3>
+//                 ${foundBusiness.companyName}
+//                 </h3>
+//                 <section>
+//                 ${foundBusiness.addressFullStreet}
+
+//                 </section>
+//                 <section>
+//                 ${foundBusiness.addressCity},
+//                 ${foundBusiness.addressStateCode}
+//                 ${foundBusiness.addressZipCode}
+//                 </section>
+//             `;
+//         }
+//     });
+
+
+// businesses.forEach(business => {
+//   /* CALCULATE ORDER SUMMARY */
+//   let totalOrders = 0
+//   business.orders.forEach(order => totalOrders += order)
+
+
+//   outEl.innerHTML += `
+//       <h2>
+//           ${business.companyName}
+//           ($${totalOrders})
+//       </h2>
+//       <section>
+//           ${business.addressFullStreet}
+//       </section>
+//       <section>
+//           ${business.addressCity},
+//           ${business.addressStateCode}
+//           ${business.addressZipCode}
+//       </section>
+//   `;
 //   outEl.innerHTML += "<hr/>";
 // });
 
+// /* CALCULATE ORDER SUMMARY */
+// let totalOrders = business.orders.reduce(
+//     (currentTotal, nextValue) => currentTotal += nextValue,
+//     0
+// )
+
+// Lightning Exercise 1: Use the reduce method on the following array to determine how much total rain fell last month.
+
+const monthlyRainfall = [23, 13, 27, 20, 20, 31, 33, 26, 19, 12, 14, 12, 10]
+
+const totalRainfall = monthlyRainfall.reduce((total, currentNum) => total + currentNum,0)
+
+console.log(totalRainfall)
+
+const words = ["The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog"]
+
+const sentence = words.reduce((accumulator, currentValue) => accumulator + " " + currentValue)
+
+console.log(sentence)
